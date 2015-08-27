@@ -14,7 +14,7 @@ var rank = require('../index.js');
 // ---------------------------------------
 var now = Date.now();
 var yesterday = now - (24 * 60 * 60 * 1000);
-
+var lastWeek = now - (7 * 24 * 60 * 60 * 1000)
 
 // ----- tests
 // ---------------------------------------
@@ -32,6 +32,12 @@ describe('it', function() {
 	it('ranks newer items above older', function() {
 		expect(rank(100, now)).to.be.above(rank(100, yesterday));
 		expect(rank(10, now)).to.be.above(rank(11, yesterday));
+	});
+
+	it('ranks highly upvoted items above newer', function() {
+		expect(rank(1000, lastWeek)).to.be.above(rank(10, now));
+		expect(rank(100, lastWeek)).to.be.above(rank(10, now));
+		expect(rank(28, lastWeek)).to.be.above(rank(10, now)); // minimum, 27 will be below
 	});
 
 });
