@@ -7,7 +7,7 @@ node_js:
   - "iojs-v1.0.4" 
 addons:
   code_climate:
-    repo_token: INSERT_TOKEN_HERE
+    repo_token: 599dca21bbd6845609f087cf0590d24011a560cc13506e10a0d30d4a8bdabb20
 script: "npm run coverage"
 after_script:
   - codeclimate < etc/lcov.info
