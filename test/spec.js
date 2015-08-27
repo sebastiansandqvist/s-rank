@@ -12,3 +12,10 @@ var app = require('../index.js');
 
 // ----- tests
 // ---------------------------------------
+describe('rank', function() {
+
+	it('should run tests', function() {
+		expect(true).to.equal(true);
+	});
+
+});

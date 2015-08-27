@@ -1,13 +1,15 @@
 {
   "name": "s-rank",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Variation on Reddit's Hot Ranking Algorithm",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "jscs index.js --config=./etc/.jscs.json && jshint --reporter=node_modules/jshint-stylish index.js --config ./etc/.jshint.json",
+    "coverage": "mocha --require blanket --reporter mocha-lcov-reporter > etc/lcov.info && mocha --require blanket -R html-cov > etc/coverage.html"
   },
   "repository": {
     "type": "git",
@@ -26,5 +28,15 @@
   "bugs": {
     "url": "https://github.com/sebastiansandqvist/s-rank/issues"
   },
-  "homepage": "https://github.com/sebastiansandqvist/s-rank#readme"
+  "homepage": "https://github.com/sebastiansandqvist/s-rank#readme",
+  "devDependencies": {
+    "blanket": "1.1.6",
+    "chai": "^3.2.0",
+    "codeclimate-test-reporter": "^0.1.0",
+    "jscs": "^2.1.1",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.0.1",
+    "mocha": "^2.2.5",
+    "mocha-lcov-reporter": "0.0.2"
+  }
 }

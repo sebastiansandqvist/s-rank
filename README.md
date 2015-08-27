@@ -4,11 +4,13 @@
 [![NPM version](https://img.shields.io/npm/v/s-rank.svg)](https://www.npmjs.com/package/s-rank) ![Dependencies](https://img.shields.io/david/sebastiansandqvist/s-rank.svg) [![build status](http://img.shields.io/travis/sebastiansandqvist/s-rank.svg)](https://travis-ci.org/sebastiansandqvist/s-rank) [![NPM license](https://img.shields.io/npm/l/s-rank.svg)](https://www.npmjs.com/package/s-rank)
 
 ## About
-This function returns a rank given an item's upvotes (`Number`) and posting date as a timestamp (`Number`).
+This function returns a rank given an item's upvotes (`Number`) and posting date as a timestamp (`Number`). Downvote functionality is not supported.
 
 The starting epoch date can be configured by setting `rank.epoch`. It should be a timestamp (`Number`).
 
 The time to optimize for can be configured by setting `rank.baseTime`. By default, it is `12 * 60 * 60 * 1000`. (12 hours)
+
+To get something like Reddit's "hot" sorting, sort in descending order by rank.
 
 ## License (ISC)
 Copyright (c) 2015, Sebastian Sandqvist <s.github@sparque.me>
