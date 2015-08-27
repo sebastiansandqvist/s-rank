@@ -10,6 +10,6 @@ function rank(votes, timestamp) {
 }
 
 rank.epoch = new Date(1970, 1, 1).getTime();
-rank.baseTime = 12 * 60 * 60 * 1000; // 12 hours
+rank.baseTime = 7 * 24 * 60 * 60 * 1000; // 1 week
 
 module.exports = rank;

@@ -7,15 +7,31 @@ require('blanket')({
 });
 
 var expect = require('chai').expect;
-var app = require('../index.js');
+var rank = require('../index.js');
+
+
+// ----- constants
+// ---------------------------------------
+var now = Date.now();
+var yesterday = now - (24 * 60 * 60 * 1000);
 
 
 // ----- tests
 // ---------------------------------------
-describe('rank', function() {
+describe('it', function() {
 
-	it('should run tests', function() {
-		expect(true).to.equal(true);
+	it('ranks 1 vote the same as 0 votes', function() {
+		expect(rank(1, now)).to.equal(rank(0, now));
+	});
+
+	it('ranks higher voted items above lower', function() {
+		expect(rank(2, now)).to.be.above(rank(1, now));
+		expect(rank(100, now)).to.be.above(rank(99, now));
+	});
+
+	it('ranks newer items above older', function() {
+		expect(rank(100, now)).to.be.above(rank(100, yesterday));
+		expect(rank(10, now)).to.be.above(rank(11, yesterday));
 	});
 
 });
