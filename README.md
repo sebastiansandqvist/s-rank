@@ -12,6 +12,17 @@ The time to optimize for can be configured by setting `rank.baseTime`. By defaul
 
 To get something like Reddit's "hot" sorting, sort in descending order by rank.
 
+## Usage
+```javascript
+var rank = require('s-rank');
+
+var now = Date.now();
+var yesterday = Date.now() - (24 * 60 * 60 * 1000);
+
+rank(100, now) > rank(75, now); // true
+rank(100, now) > rank(100, yesterday); // true
+```
+
 ## License (ISC)
 Copyright (c) 2015, Sebastian Sandqvist <s.github@sparque.me>
 
