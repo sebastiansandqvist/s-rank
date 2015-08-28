@@ -1,15 +1,16 @@
 {
   "name": "s-rank",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Variation on Reddit's Hot Ranking Algorithm",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "mocha",
     "lint": "jscs index.js --config=./etc/.jscs.json && jshint --reporter=node_modules/jshint-stylish index.js --config ./etc/.jshint.json",
-    "coverage": "mocha --require blanket --reporter mocha-lcov-reporter > etc/lcov.info && mocha --require blanket -R html-cov > etc/coverage.html"
+    "coverage": "mocha --require blanket --reporter mocha-lcov-reporter > etc/lcov.info && mocha --require blanket -R html-cov > etc/coverage.html",
+    "test": "mocha",
+    "posttest": "npm run lint"
   },
   "repository": {
     "type": "git",
