@@ -1,6 +1,6 @@
 {
   "name": "s-rank",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Variation on Reddit's Hot Ranking Algorithm",
   "main": "index.js",
   "directories": {

@@ -30,14 +30,22 @@ describe('it', function() {
 	});
 
 	it('ranks newer items above older', function() {
+		expect(rank(0, now)).to.be.above(rank(0, yesterday));
+		expect(rank(1, now)).to.be.above(rank(1, yesterday));
 		expect(rank(100, now)).to.be.above(rank(100, yesterday));
-		expect(rank(10, now)).to.be.above(rank(11, yesterday));
+		expect(rank(1000, now)).to.be.above(rank(1000, yesterday));
+		expect(rank(100000, now)).to.be.above(rank(100000, yesterday));
 	});
 
 	it('ranks highly upvoted items above newer', function() {
+		// note: dependent on rank.baseTime of two weeks
 		expect(rank(1000, lastWeek)).to.be.above(rank(10, now));
 		expect(rank(100, lastWeek)).to.be.above(rank(10, now));
 		expect(rank(28, lastWeek)).to.be.above(rank(10, now)); // minimum, 27 will be below
+		expect(rank(27, lastWeek)).to.be.below(rank(10, now));
+		expect(rank(24, lastWeek)).to.be.above(rank(10, yesterday));
+		expect(rank(23, lastWeek)).to.be.below(rank(10, yesterday));
+		expect(rank(10, now)).to.be.above(rank(11, yesterday));
 	});
 
 });
