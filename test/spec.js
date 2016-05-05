@@ -8,7 +8,7 @@ var rank = require('../index.js');
 // ---------------------------------------
 var now = Date.now();
 var yesterday = now - (24 * 60 * 60 * 1000);
-var lastWeek = now - (7 * 24 * 60 * 60 * 1000)
+var lastWeek = now - (7 * 24 * 60 * 60 * 1000);
 
 // ----- tests
 // ---------------------------------------

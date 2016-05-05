@@ -2,8 +2,8 @@
 
 function rank(votes, timestamp) {
 
-	let order = Math.log(Math.max(votes, 1)); // 0 votes -> 1 vote
-	let delta = timestamp - rank.epoch;
+	const order = Math.log(Math.max(votes, 1)); // 0 votes -> 1 vote
+	const delta = timestamp - rank.epoch;
 
 	return order + (delta / rank.baseTime);
 
