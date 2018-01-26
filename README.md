@@ -1,6 +1,6 @@
 # s-rank
 
-[![NPM version](https://img.shields.io/npm/v/s-rank.svg)](https://www.npmjs.com/package/s-rank) ![Dependencies](https://img.shields.io/david/sebastiansandqvist/s-rank.svg) [![build status](http://img.shields.io/travis/sebastiansandqvist/s-rank.svg)](https://travis-ci.org/sebastiansandqvist/s-rank) ![NPM license](https://img.shields.io/npm/l/s-rank.svg)](https://www.npmjs.com/package/s-rank)
+[![NPM version](https://img.shields.io/npm/v/s-rank.svg)](https://www.npmjs.com/package/s-rank) ![Dependencies](https://img.shields.io/david/sebastiansandqvist/s-rank.svg) [![build status](http://img.shields.io/travis/sebastiansandqvist/s-rank.svg)](https://travis-ci.org/sebastiansandqvist/s-rank) [![NPM license](https://img.shields.io/npm/l/s-rank.svg)](https://www.npmjs.com/package/s-rank)
 
 ## About
 Like Reddit's "Hot" ranking algorithm or the one on Hacker News, this function returns a rank given a number of upvotes `{Number}` and an original posting timestamp `{Number}`.
